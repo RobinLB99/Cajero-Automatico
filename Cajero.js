@@ -1,11 +1,5 @@
 alert("¡Atencion! Este cajero solo tiene billetes de 50, 20 y 10 dolares");
 
-let valorEnCaja = document.getElementById("valores");
-let d = document.getElementById("dinero");
-let b = document.getElementById("extraer");
-b.addEventListener("click", extraer);
-let resultado = document.getElementById("resultado");
-
 imagenes = [];
 imagenes["50"] = "./images/50.png";
 imagenes["20"] = "./images/20.png";
@@ -99,3 +93,9 @@ const extraer = () =>{
     }
     entregado = [];
 }
+
+let valorEnCaja = document.getElementById("valores");
+let d = document.getElementById("dinero");
+let b = document.getElementById("extraer");
+b.addEventListener("click", extraer);
+let resultado = document.getElementById("resultado");

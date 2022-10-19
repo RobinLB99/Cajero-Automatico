@@ -1,5 +1,11 @@
 alert("¡Atencion! Este cajero solo tiene billetes de 50, 20 y 10 dolares");
 
+let valorEnCaja = document.getElementById("valores");
+let d = document.getElementById("dinero");
+let b = document.getElementById("extraer");
+b.addEventListener("click", extraer);
+let resultado = document.getElementById("resultado");
+
 imagenes = [];
 imagenes["50"] = "./images/50.png";
 imagenes["20"] = "./images/20.png";
@@ -23,7 +29,7 @@ caja.push(new billete(10, 10));
 
 let total = 0, totalE = 0;
 
-const contarCaja = () => {
+function contarCaja(){
     total = 0;
     for (var t of caja){
         total += (t.valor * t.cantidad);
@@ -31,7 +37,7 @@ const contarCaja = () => {
     console.log("El dinero en caja es de $" + total);
 }
 
-const contarEntregado = () => {
+function contarEntregado() {
     totalE = 0;
     for (var t of entregado){
         totalE += (t.valor * t.cantidad);
@@ -42,7 +48,7 @@ const contarEntregado = () => {
 contarCaja();
 valorEnCaja.innerHTML = "Dinero disponible: <strong>$" + total + "<strong/>";
 
-const extraer = () =>{
+function extraer() {
     let dinero;
     let div = 0;
     let billetes = 0;
@@ -93,9 +99,3 @@ const extraer = () =>{
     }
     entregado = [];
 }
-
-let valorEnCaja = document.getElementById("valores");
-let d = document.getElementById("dinero");
-let b = document.getElementById("extraer");
-b.addEventListener("click", extraer);
-let resultado = document.getElementById("resultado");
